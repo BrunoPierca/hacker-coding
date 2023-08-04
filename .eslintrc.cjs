@@ -11,6 +11,5 @@ module.exports = {
   ],
   rules: {
     'prettier/prettier': ['off', { singleQuote: true }],
-    'vue/no-v-text-v-html-on-component': 0
 }
 };
