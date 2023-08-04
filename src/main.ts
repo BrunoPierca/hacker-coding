@@ -10,7 +10,7 @@ Vue.config.productionTip = false;
 
 const vuetify = new Vuetify({
   icons: {
-    iconfont: 'mdi', // default - only for display purposes
+    iconfont: 'mdi',
   },
 
 });
