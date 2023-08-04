@@ -7,14 +7,15 @@
   </v-app>
 </template>
 
-<script lang="ts">
+<script>
 import AppBar from "./components/AppBar.vue";
+import ArticleList from "./components/ArticleList.vue";
+
 export default {
   name: "App",
   components: {
     AppBar,
+    ArticleList,
   },
 };
 </script>
-
-

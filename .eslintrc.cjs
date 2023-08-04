@@ -6,11 +6,6 @@ module.exports = {
   extends: [
     "plugin:vue/essential",
     "eslint:recommended",
-    "@vue/eslint-config-typescript/recommended",
     "@vue/eslint-config-prettier",
   ],
-  rules: {
-    'prettier/prettier': ['off', { singleQuote: true }],
-    'vue/no-v-text-v-html-on-component': 0
-}
 };
