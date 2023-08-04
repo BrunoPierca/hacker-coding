@@ -39,6 +39,11 @@ const filteredData = computed(() => {
   <v-list three-line class="d-flex flex-column flex-wrap align-center justify-center fill-height"
     style="min-height: calc(100vh - 48px);">
 
+    <v-btn elevation="2" rounded dense @click="toggleFilter" color="primary">
+      toggle {{ filterByStoryURL ? 'With' : 'Without' }} article URL
+      <v-icon>{{ filterByStoryURL ? 'check' : 'close' }}</v-icon>
+    </v-btn>
+
     <v-progress-circular :class="isLoading ? 'd-block' : 'd-none'" indeterminate color="primary" />
 
     <v-alert v-if="isError" dense elevation="5" prominent color="pink darken-1" dark type="error">
@@ -56,11 +61,6 @@ const filteredData = computed(() => {
       style="max-width: 100%;" />
 
     <ArticleDetailsModal v-if="activeItem" :item="activeItem" :set-active-item="setActiveItem" />
-
-    <v-btn elevation="2" rounded dense fixed @click="toggleFilter" color="primary" style="bottom: 36px; right: 16px;">
-      {{ filterByStoryURL ? 'With' : 'Without' }} article URL
-      <v-icon>{{ filterByStoryURL ? 'check' : 'close' }}</v-icon>
-    </v-btn>
 
   </v-list>
 </template>
