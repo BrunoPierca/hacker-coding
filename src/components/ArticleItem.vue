@@ -1,15 +1,6 @@
 <script lang="ts">
 import type { Hit } from '../interfaces';
-
-const cleanInput = ( input : string ): string => {
-    const parser = new DOMParser();
-
-    const parsedInput = parser.parseFromString(input, 'text/html');
-    
-    return parsedInput.body.innerText;
-}
-
-
+import { sanitizeInput } from '../helpers/sanitizeInput';
 
 export default {
     props: {
@@ -17,34 +8,60 @@ export default {
             type: Object as () => Hit,
             required: true,
         },
+        setActiveItem: {
+            type: Function,
+            required: true
+        }
+    },
+    methods: {
+        handleClickButton() {
+            this.setActiveItem(this.item);
+        },
     },
     data() {
-         return {
-            cleanInput
-         }
+        return {
+            sanitizeInput
+        }
     }
-    
+
 };
 </script>
 <template>
-    <v-card class="mx-auto" max-width="344" outlined>
-        
-        <v-list-item three-line>
-            <v-list-item-content>
-                <div class="text-overline mb-4">
-                    {{ item.story_title ?? "No title" }}
-                </div>
-                <v-list-item-title class="text-h5 mb-1">
-                    {{ item.author ?? "Unknown author" }}
-                </v-list-item-title>
-                <v-list-item-subtitle>{{ item.comment_text ? cleanInput(item.comment_text) : "No comment" }}</v-list-item-subtitle>
-            </v-list-item-content>
-        </v-list-item>
+    <v-row class="my-2" justify="center">
+        <v-col sm="10" lg="8" align-self="center">
+            <v-card outlined>
 
-        <v-card-actions>
-            <v-btn outlined rounded text onclick="console.log('open modal')">
-                Button
-            </v-btn>
-        </v-card-actions>
-    </v-card>
+                <v-list-item three-line>
+
+                    <v-list-item-content>
+
+                        <div class="text-overline mb-1 d-flex flex-row">
+                            {{ item.story_title ?? "No title" }}
+                            <v-spacer />
+                            <v-btn rounded icon elevation="3" :disabled="!item.story_url" :href="item.story_url ?? ''"
+                                target="_blank" class="me-1">
+                                <v-icon>link</v-icon>
+                            </v-btn>
+                        </div>
+
+                        <v-list-item-subtitle>{{ item.comment_text ? sanitizeInput(item.comment_text) : "No comment"
+                        }}</v-list-item-subtitle>
+
+                        <v-list-item-title class="text-h5 mt-3 d-flex flex-row">
+                            {{ item.author ?? "Unknown author" }}
+                            <v-spacer />
+                            <v-btn rounded outlined color="primary" text @click="handleClickButton">
+                                View details
+                            </v-btn>
+                        </v-list-item-title>
+
+                    </v-list-item-content>
+
+                </v-list-item>
+
+            </v-card>
+
+        </v-col>
+
+    </v-row>
 </template>
