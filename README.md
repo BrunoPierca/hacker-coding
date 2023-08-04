@@ -1,15 +1,16 @@
 # hackerCodingJS
 
-This template should help get you started developing with Vue 3 in Vite.
+## Summary
+This test project was created with Vue.js 2, Bootstrap and Vuetify. It fetches the latest coding articles from HackerNews, filters them based on if they have a story_url by default, it also provides a toggle to make all articles visible.
 
-## Recommended IDE Setup
+Each article item has a "View details" button that, when clicked, opens a modal showcasing the fine details, including a button to navigate to the story if the URL is provided.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+This project is fully responsive, designed with a mobile-first approach and featuring robust and scalable data fetching logic.
 
-## Customize configuration
+I did my best to keep it simple while adding key features that optimize both performance and network resources.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
+### Typescript version available in "with-typescript" branch
 ## Project Setup
 
 ```sh
@@ -32,4 +33,15 @@ npm run build
 
 ```sh
 npm run lint
+```
+
+
+
+
+## Folder structure
+```ascii
+src/
+├─ components/
+├─ helpers/
+├─ services/
 ```
