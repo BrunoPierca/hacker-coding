@@ -9,8 +9,7 @@ This project is fully responsive, designed with a mobile-first approach and feat
 
 I did my best to keep it simple while adding key features that optimize both performance and network resources.
 
-<a href="[http://nodejs.org](https://hacker-coding.netlify.app/)" target="_blank">Live demo</a>
-
+Try the [live demo]([https://producthunt.com](https://hacker-coding.netlify.app/))
 
 ### Typescript version available in "with-typescript" branch
 ## Project Setup
