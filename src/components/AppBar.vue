@@ -1,10 +1,7 @@
-<script lang="ts">
-    export default {}
-</script>
-
-
 <template>
-    <v-app-bar rounded elevation="4">
-      <h4><b>Hacker Coding</b></h4>
+  <div>
+    <v-app-bar color="primary lighten 2" dense>
+      <v-toolbar-title class="font-weight-bold">Hacker Coding</v-toolbar-title>
     </v-app-bar>
+  </div>
 </template>

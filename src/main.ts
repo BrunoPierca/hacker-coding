@@ -1,9 +1,10 @@
 import Vue from "vue";
 import Vuetify from "vuetify";
+import { VueQueryPlugin } from '@tanstack/vue-query'
+import App from "./App.vue";
 import "vuetify/dist/vuetify.min.css";
 import '@mdi/font/css/materialdesignicons.css'
-import App from "./App.vue";
-import { VueQueryPlugin } from '@tanstack/vue-query'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.config.productionTip = false;
 
